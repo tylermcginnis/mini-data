@@ -1,0 +1,16 @@
+{
+  "name": "mini-data",
+  "version": "0.0.0",
+  "homepage": "https://github.com/tylermcginnis33/mini-data",
+  "authors": [
+    "Tyler McGinnis <tylermcginnis33@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
