@@ -1,1 +1,1 @@
-controllers.js
+angular.module('mini-data', ['mini-data.controllers'])
