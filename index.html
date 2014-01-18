@@ -1,13 +1,77 @@
 <!DOCTYPE html>
-<html ng-app="mini-data">
+<html ng-app="mini-data" ng-csp>
   <head>
     <title>Mini-Data</title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/components-font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-    <div id="main-container" ng-controller="mainCtrl">
-      This is content, yo! {{test}}
+    <div id="container-full" ng-controller="mainCtrl">
+      <div class="navbar navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">LOGO</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li><a href="#"><i class="fa fa-user fa-2x"></i></a></li>
+          <li><a href="#"><i class="fa fa-gear fa-2x"></i></a></li>
+        </ul>
+      </div>
+      <div class="jumbotron">
+        <div class="container"> 
+          <div class="row">
+            <div class="col-lg-4">
+              <h4> aute consequat risus nisi? </h4>
+              <p> aute consequat risus nisi? aute consequat risus nisi?  </p>
+
+              <h4> aute consequat risus nisi? </h4>
+              <p> aute consequat risus nisi?  aute consequat risus nisi?  aute consequat risus nisi?  aute consequat risus nisi? </p>
+            </div>
+
+            <div class="col-lg-4">
+              <h4> aute consequat risus nisi? </h4>
+              <p> aute consequat risus nisi?  aute consequat risus nisi?  aute consequat risus nisi? </p>
+
+              <h4> aute consequat risus nisi? </h4>
+              <p>T aute consequat risus nisi?  aute consequat risus nisi?  aute consequat risus nisi? </p>
+            </div>
+
+            <div class="col-lg-4">
+              <h4> aute consequat risus nisi? </h4>
+              <p> aute consequat risus nisi?  aute consequat risus nisi? </p>
+
+              <h4> aute consequat risus nisi? t</h4>
+              <p>T aute consequat risus nisi?  aute consequat risus nisi? ate.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-4">
+              <h4> aute consequat risus nisi? </h4>
+              <p> aute consequat risus nisi? aute consequat risus nisi?  </p>
+
+              <h4> aute consequat risus nisi? </h4>
+              <p> aute consequat risus nisi?  aute consequat risus nisi?  aute consequat risus nisi?  aute consequat risus nisi? </p>
+            </div>
+
+            <div class="col-lg-4">
+              <h4> aute consequat risus nisi? </h4>
+              <p> aute consequat risus nisi?  aute consequat risus nisi?  aute consequat risus nisi? </p>
+
+              <h4> aute consequat risus nisi? </h4>
+              <p>T aute consequat risus nisi?  aute consequat risus nisi?  aute consequat risus nisi? </p>
+            </div>
+
+            <div class="col-lg-4">
+              <h4> aute consequat risus nisi? </h4>
+              <p> aute consequat risus nisi?  aute consequat risus nisi? </p>
+
+              <h4> aute consequat risus nisi? t</h4>
+              <p>T aute consequat risus nisi?  aute consequat risus nisi? ate.</p>
+            </div>
+          </div>
+      </div>
+      </div>
     </div>
     <script src="bower_components/jquery/jquery.min.js"></script>
     <script src="bower_components/angular/angular.min.js"></script>

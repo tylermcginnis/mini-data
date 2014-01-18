@@ -21,6 +21,7 @@
     "angular-ui-router": "~0.2.8",
     "angular-charts": "*",
     "bootstrap": "~3.0.3",
-    "angular-resource": "~1.2.9"
+    "angular-resource": "~1.2.9",
+    "components-font-awesome": "~4.0.3"
   }
 }
