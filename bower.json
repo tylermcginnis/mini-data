@@ -22,6 +22,7 @@
     "angular-charts": "*",
     "bootstrap": "~3.0.3",
     "angular-resource": "~1.2.9",
-    "components-font-awesome": "~4.0.3"
+    "components-font-awesome": "~4.0.3",
+    "angular-route": "~1.2.9"
   }
 }
