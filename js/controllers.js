@@ -29,5 +29,12 @@ angular.module('mini-data.controllers', [])
     }
 
     $scope.time = getTimeInfo();
+
+    setInterval(function(){
+      $scope.$apply(function(){
+        $scope.time = getTimeInfo();
+      });
+    }, 10000);
+    
     $scope.date = getDateInfo();
   });
