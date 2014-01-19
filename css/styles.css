@@ -9,11 +9,11 @@ html, body{
   text-align: center;
 }
 
-#time{
+.time{
   font-size: 155px;
 }
 
-#date {
+.date {
   font-size: 25px;
   position: relative;
   bottom: 25px;
