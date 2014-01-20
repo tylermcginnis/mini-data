@@ -21,15 +21,15 @@
       <div class="container-fluid">
         <div class="time">{{time}}</div>
         <div class="date">{{date}}</div>
-        <div class="show-goals btn btn-default"> Show Goals and Statistics </div>
-        <div class="new-goal btn btn-default"> New Goal </div>
+        <div class="show-goals btn btn-default" ng-click="showGoalsFn()"> Show Goals and Statistics </div>
+        <div class="new-goal btn btn-default" ng-click="showNewGoalFn()"> New Goal </div>
       </div>
     </div>
     <div id="show-goals-container" ng-controller="newGoalCtrl" ng-if="showGoals">
-      Show Goals:{{showGoals}} and {{test}}
+      Show Goals:{{showGoals}}
     </div>
-    <div id="new-goal-container" ng-controller="newGoalCtrl" ng-if="newGoal">
-      New Goal Container! {{test}}
+    <div id="new-goal-container" ng-controller="newGoalCtrl" ng-if="showNewGoal">
+      New Goal Container!
     </div>
 
     <script src="bower_components/jquery/jquery.min.js"></script>

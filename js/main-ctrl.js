@@ -1,5 +1,5 @@
 angular.module('mini-data.controllers')
-  .controller('mainCtrl', ['$scope', 'sharedState', function($scope, sharedState){
+  .controller('mainCtrl', ['$scope', function($scope){
     var getTimeInfo = function(){
       var now = new Date();
       var hours = now.getHours();
