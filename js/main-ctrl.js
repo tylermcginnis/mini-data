@@ -1,11 +1,13 @@
-angular.module('mini-data.controllers', [])
-  .controller('mainCtrl', function($scope){
-    
+angular.module('mini-data.controllers')
+  .controller('mainCtrl', ['$scope', 'sharedState', function($scope, sharedState){
     var getTimeInfo = function(){
       var now = new Date();
       var hours = now.getHours();
       var period = 'AM';
       var minutes = now.getMinutes();
+      if(hours === 0){
+        hours = 12;
+      }
       if(hours > 12){
         hours -= 12;
         period = 'PM';
@@ -35,6 +37,6 @@ angular.module('mini-data.controllers', [])
         $scope.time = getTimeInfo();
       });
     }, 10000);
-    
+
     $scope.date = getDateInfo();
-  });
+  }]);
