@@ -1,5 +1,5 @@
 angular.module('mini-data.controllers')
-  .controller('bodyCtrl', ['$scope',function($scope){
+  .controller('bodyCtrl', ['$scope', function($scope){
     $scope.showMain = true;
     $scope.showGoals = false;
     $scope.showNewGoal = false;
