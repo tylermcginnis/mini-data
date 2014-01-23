@@ -4,12 +4,13 @@
     <title>Mini-Data</title>
     <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="bower_components/components-font-awesome/css/font-awesome.min.css">
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body ng-controller="bodyCtrl">
     <div class="navbar navbar-default">
         <div class="navbar-header">
+          <a class="navbar-brand" href="#" ng-click="showMainFn()">Home</a>
           <a class="navbar-brand" href="#" ng-click="showGoalsFn()">Goals & Stats</a>
           <a class="navbar-brand" href="#" ng-click="showNewGoalFn()">New Goal </a>
         </div>
@@ -27,9 +28,21 @@
       </div>
     </div>
 
-    <!-- Goals and Statistics View -->
-    <div id="show-goals-container" ng-controller="newGoalCtrl" ng-if="showGoals">
+    <!-- Statistics & Goals View -->
+    <div id="new-goal-container" ng-controller="newGoalCtrl" ng-if="showGoals">
       <div class="container-fluid">
+        <h1> Goals and Statistics </h1>
+          <div id="inner-container"> 
+            <button type="button" class="btn btn-default">Submit</button>
+          </div>
+      </div>
+    </div>
+
+
+    <!-- New Goals View -->
+    <div id="show-goals-container" ng-controller="newGoalCtrl" ng-if="showNewGoal">
+      <div class="container-fluid">
+        <h1> New Goal </h1>
         <div id="inner-container" >
           <div class="input-group">
             <span class="input-group-addon">Goal</span>
@@ -53,15 +66,6 @@
           </div>
           <div class="show-goals btn btn-default" ng-click="submitGoal()"> Submit </div>
         </div>
-      </div>
-    </div>
-
-    <!-- New Goal View -->
-    <div id="new-goal-container" ng-controller="newGoalCtrl" ng-if="showNewGoal">
-      <div class="container-fluid">
-          <div id="inner-container"> 
-            <button type="button" class="btn btn-default">Submit</button>
-          </div>
       </div>
     </div>
 
