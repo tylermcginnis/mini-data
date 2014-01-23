@@ -13,8 +13,71 @@ html, body{
   font-size: 155px;
 }
 
+.navbar{
+  min-height: initial;
+}
+
+.navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+  color: #5e5e5e;
+  background-color: rgb(230, 230, 230);
+}
+
+.navbar-nav>li>a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.navbar-brand {
+  padding: 10px 15px;
+  line-height: normal;
+}
+
 .date {
   font-size: 25px;
   position: relative;
   bottom: 25px;
+}
+
+.fa-2x {
+  font-size: 1.5em;
+}
+
+#inner-container{
+  width: 75%;
+  margin: 20px auto;
+}
+
+.input-group{
+  margin-bottom: 20px;
+}
+
+.input-group .input-group-addon {
+  padding: 6px 52px;
+}
+
+#timeline-container .form-control{
+  display: inline;
+  width: 100px;
+  float: left;
+  margin-right: 20px;
+}
+
+#timeline-container {
+  overflow: hidden;
+}
+
+#timeline-container .input-group-addon:first-child {
+  width: 135px;
+  border-right: 1px solid #ccc;
+  height: 33px;
+}
+
+#timeline-container .input-group-addon{
+  float: left;
+}
+
+#every{
+  float: left;
+  font-size: 23px;
+  margin-right: 20px;
 }

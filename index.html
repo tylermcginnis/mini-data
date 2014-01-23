@@ -10,7 +10,8 @@
   <body ng-controller="bodyCtrl">
     <div class="navbar navbar-default">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Logo or Something</a>
+          <a class="navbar-brand" href="#" ng-click="showGoalsFn()">Goals & Stats</a>
+          <a class="navbar-brand" href="#" ng-click="showNewGoalFn()">New Goal </a>
         </div>
         <ul class="nav navbar-nav pull-right">
           <li><a href="#"><i class="fa fa-gear fa-2x"></i></a></li>
@@ -29,9 +30,29 @@
     <!-- Goals and Statistics View -->
     <div id="show-goals-container" ng-controller="newGoalCtrl" ng-if="showGoals">
       <div class="container-fluid">
-          <div id="inner-container"> </div>
-        <div class="show-goals btn btn-default" ng-click="showMainFn()"> Home </div>
-        <div class="new-goal btn btn-default" ng-click="showNewGoalFn()"> New Goal </div>
+        <div id="inner-container" >
+          <div class="input-group">
+            <span class="input-group-addon">Goal</span>
+            <input type="text" class="form-control" placeholder="">
+          </div>
+          <div id="timeline-container">
+            <select class="form-control">
+              <option value="one">Once</option>
+              <option value="two">Twice</option>
+              <option value="three">3X</option>
+              <option value="four">4X</option>
+              <option value="five">5X</option>
+            </select> 
+            <span id="every"> every</span>
+            <select class="form-control">
+              <option value="one">Day</option>
+              <option value="two">Week</option>
+              <option value="three">Month</option>
+              <option value="four">Year</option>
+            </select> 
+          </div>
+          <div class="show-goals btn btn-default" ng-click="submitGoal()"> Submit </div>
+        </div>
       </div>
     </div>
 
@@ -41,8 +62,6 @@
           <div id="inner-container"> 
             <button type="button" class="btn btn-default">Submit</button>
           </div>
-        <div class="show-goals btn btn-default" ng-click="showMainFn()"> Home </div>
-        <div class="new-goal btn btn-default" ng-click="showGoalsFn()"> Show Goals and Statistics </div>
       </div>
     </div>
 
