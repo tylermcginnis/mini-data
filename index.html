@@ -28,12 +28,22 @@
 
     <!-- Goals and Statistics View -->
     <div id="show-goals-container" ng-controller="newGoalCtrl" ng-if="showGoals">
-      Show Goals:{{showGoals}}
+      <div class="container-fluid">
+          <div id="inner-container"> </div>
+        <div class="show-goals btn btn-default" ng-click="showMainFn()"> Home </div>
+        <div class="new-goal btn btn-default" ng-click="showNewGoalFn()"> New Goal </div>
+      </div>
     </div>
 
     <!-- New Goal View -->
     <div id="new-goal-container" ng-controller="newGoalCtrl" ng-if="showNewGoal">
-      New Goal Container!
+      <div class="container-fluid">
+          <div id="inner-container"> 
+            <button type="button" class="btn btn-default">Submit</button>
+          </div>
+        <div class="show-goals btn btn-default" ng-click="showMainFn()"> Home </div>
+        <div class="new-goal btn btn-default" ng-click="showGoalsFn()"> Show Goals and Statistics </div>
+      </div>
     </div>
 
     <script src="bower_components/jquery/jquery.min.js"></script>
