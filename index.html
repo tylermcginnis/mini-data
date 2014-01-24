@@ -21,19 +21,21 @@
     </div>
     <div id="container-full" ng-controller="mainCtrl" ng-if="showMain">
       <div class="container-fluid">
-        <div class="time" >{{time}}</div>
-        <div class="date">{{date}}</div>
+        <div class="time" ng-bind="time"></div>
+        <div class="date" ng-bind="date"></div>
         <div class="show-goals btn btn-default" ng-click="showGoalsFn()"> Show Goals and Statistics </div>
         <div class="new-goal btn btn-default" ng-click="showNewGoalFn()"> New Goal </div>
       </div>
     </div>
 
     <!-- Statistics & Goals View -->
-    <div id="new-goal-container" ng-controller="newGoalCtrl" ng-if="showGoals">
+    <div id="new-goal-container" ng-controller="goalsDataCtrl" ng-if="showGoals">
       <div class="container-fluid">
         <h1> Goals and Statistics </h1>
-          <div id="inner-container"> 
-            <button type="button" class="btn btn-default">Submit</button>
+          <div id="inner-container">
+            <div id="goal-card" ng-repeat="data in dummyData">
+              <h3> Goal: {{data.goal}} {{data.time}} every {{data.every}}</h3>
+            </div>
           </div>
       </div>
     </div>
@@ -46,25 +48,25 @@
         <div id="inner-container" >
           <div class="input-group">
             <span class="input-group-addon">Goal</span>
-            <input type="text" class="form-control" placeholder="">
+            <input type="text" class="form-control" placeholder="" ng-model="goal.text">
           </div>
           <div id="timeline-container">
-            <select class="form-control">
-              <option value="one">Once</option>
-              <option value="two">Twice</option>
-              <option value="three">3X</option>
-              <option value="four">4X</option>
-              <option value="five">5X</option>
+            <select class="form-control" ng-model="goal.time">
+              <option value="once">Once</option>
+              <option value="twice">Twice</option>
+              <option value="3x">3X</option>
+              <option value="4x">4X</option>
+              <option value="5x">5X</option>
             </select> 
             <span id="every"> every</span>
-            <select class="form-control">
-              <option value="one">Day</option>
-              <option value="two">Week</option>
-              <option value="three">Month</option>
-              <option value="four">Year</option>
+            <select class="form-control" ng-model="goal.every">
+              <option value="day">Day</option>
+              <option value="week">Week</option>
+              <option value="month">Month</option>
+              <option value="yaer">Year</option>
             </select> 
           </div>
-          <div class="show-goals btn btn-default" ng-click="submitGoal()"> Submit </div>
+          <button type="submit" class="show-goals btn btn-default" ng-click="submitGoal()"> Submit </button>
         </div>
       </div>
     </div>

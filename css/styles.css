@@ -87,6 +87,27 @@ html, body{
   font-weight: 100;
 }
 
+#new-goal-container .container-fluid{
+  width: 95%;
+}
+
+#new-goal-container #inner-container{
+  width: 95%;
+}
+
 #new-goal-container .container-fluid, #show-goals-container .container-fluid{
   margin-top: 50px;
+}
+
+#goal-card {
+  width: 48%;
+  float: left;
+  margin: 1%;
+  border-radius: 5px;
+  background-color: #F0F0F0;
+  border-color: #e7e7e7;
+}
+
+#goal-card h3{
+  margin-bottom: 30px;
 }
