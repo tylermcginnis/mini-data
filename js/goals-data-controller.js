@@ -7,19 +7,19 @@ angular.module('mini-data.controllers')
         every: 'week'
       },
       {
-        goal: 'Lose 5 Pounds',
-        time: 'once',
-        every: 'week'
+        goal: 'read a book',
+        time: 'twice',
+        every: 'year'
       },
       {
-        goal: 'Lose 5 Pounds',
-        time: 'once',
-        every: 'week'
+        goal: 'skate',
+        time: '4x',
+        every: 'month'
       },
       {
-        goal: 'Lose 5 Pounds',
+        goal: 'make a website',
         time: 'once',
-        every: 'week'
+        every: 'year'
       }
     ]
   });
