@@ -1,5 +1,5 @@
 angular.module('mini-data.controllers')
-  .controller('bodyCtrl', ['$scope', function($scope){
+  .controller('bodyCtrl', ['$scope', 'firebaseAuth', function($scope, firebaseAuth){
     $scope.showMain = true;
     $scope.showGoals = false;
     $scope.showNewGoal = false;
@@ -21,5 +21,34 @@ angular.module('mini-data.controllers')
       $scope.showGoals = false;
       $scope.showNewGoal = false;
     }
+
+    $scope.login = function() {
+      firebaseAuth.login();
+    };
+
+    $scope.logout = function() {
+        firebaseAuth.logout();
+    };
+
+    $scope.isLoggedIn = function() {
+        return !!$scope.user;
+    };
+
+    $scope.safeApply = function(fn) {
+        var phase = this.$root.$$phase;
+        if (phase == '$apply' || phase == '$digest') {
+            if(fn && (typeof(fn) === 'function')) {
+                fn();
+            }
+        } else {
+            this.$apply(fn);
+        }
+    };
+
+    $scope.$on('authEvent', function() {
+        $scope.safeApply(function() {
+            $scope.user = firebaseAuth.user;
+        });
+    });
 
   }]);
