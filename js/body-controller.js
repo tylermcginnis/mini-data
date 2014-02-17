@@ -43,5 +43,4 @@ angular.module('mini-data.controllers')
     $scope.isLoggedIn = function() {
         return $scope.loggedIn;
     };
-
   }]);

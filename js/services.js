@@ -10,10 +10,17 @@ angular.module('mini-data.services')
           console.log(error);
       } else if (user) {
           // user authenticated with Firebase
+          $rootScope.$apply(function(){
+            $rootScope.logIn = true;
+          });
           auth.user = user;
           auth.fbuser = FBuser;
+          console.log('Youre logged in');
       } else {
-          // user is logged out
+          console.log('User is not logged in');
+          $rootScope.$apply(function(){
+            $rootScope.logIn = false;
+          });
       }
     });
 		return auth;

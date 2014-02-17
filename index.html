@@ -11,11 +11,11 @@
     <div class="navbar navbar-default">
         <div class="navbar-header">
           <a class="navbar-brand" href="#" ng-click="showMainFn()">Home</a>
-          <a class="navbar-brand" href="#" ng-click="showGoalsFn()">Goals & Stats</a>
-          <a class="navbar-brand" href="#" ng-click="showNewGoalFn()">New Goal </a>
+          <a class="navbar-brand" href="#" ng-click="showGoalsFn()" ng-if="logIn">Goals & Stats</a>
+          <a class="navbar-brand" href="#" ng-click="showNewGoalFn()" ng-if="logIn">New Goal </a>
         </div>
         <ul class="nav navbar-nav pull-right">
-          <li>
+          <li ng-if="logIn">
             <a class="dropdown-toggle pointer">
               <i class="fa fa-gear fa-2x"></i>
             </a>
@@ -29,8 +29,8 @@
               <i class="fa fa-user fa-2x"></i>
             </a>
             <ul class="dropdown-menu">
-              <li class="pointer" ng-if="isLoggedIn()" ng-click="logout()"><a>Log Out</a></li>
-              <li class="pointer" ng-if="!isLoggedIn()" ng-click="login()"><a>Log In</a></li>
+              <li class="pointer" ng-if="logIn" ng-click="logout()"><a>Log Out</a></li>
+              <li class="pointer" ng-if="!logIn" ng-click="login()"><a>Log In</a></li>
             </ul>
           </li>
         </ul>
@@ -39,8 +39,9 @@
       <div class="container-fluid">
         <div class="time" ng-bind="time"></div>
         <div class="date" ng-bind="date"></div>
-        <div class="show-goals btn btn-default" ng-click="showGoalsFn()"> Show Goals and Statistics </div>
-        <div class="new-goal btn btn-default" ng-click="showNewGoalFn()"> New Goal </div>
+        <div class="show-goals btn btn-default" ng-click="showGoalsFn()" ng-if="logIn"> Show Goals and Statistics </div>
+        <div class="new-goal btn btn-default" ng-click="showNewGoalFn()" ng-if="logIn"> New Goal </div>
+        <div class="new-goal" ng-if="!logIn"> *Log in to track your data </div>
       </div>
     </div>
 
@@ -49,8 +50,8 @@
       <div class="container-fluid">
         <h1> Goals and Statistics </h1>
           <div id="inner-container">
-            <div id="goal-card" ng-repeat="data in dummyData">
-              <h3> Goal: {{data.goal}} {{data.time}} every {{data.every}}</h3>
+            <div id="goal-card" ng-repeat="data in goalData">
+              <h3> Goal: {{data.text}} {{data.time}} every {{data.every}}</h3>
             </div>
           </div>
       </div>
