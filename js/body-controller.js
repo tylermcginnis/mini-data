@@ -3,6 +3,9 @@ angular.module('mini-data.controllers')
     $scope.showMain = true;
     $scope.showGoals = false;
     $scope.showNewGoal = false;
+    $scope.mainUser = {};
+    $scope.mainUser.goals = [];
+    $scope.loggedIn = false;
 
     $scope.showGoalsFn = function(){
       $scope.showMain = false;
@@ -23,33 +26,22 @@ angular.module('mini-data.controllers')
     }
 
     $scope.login = function() {
-      firebaseAuth.login();
+      firebaseAuth.login('facebook', {
+        rememberMe: true
+      });
+      $scope.mainUser.fbInfo = firebaseAuth.user;
+      $scope.loggedIn = true;
+      firebaseAuth.fbuser.child($scope.mainUser.fbInfo.id).set($scope.mainUser);
     };
 
     $scope.logout = function() {
         firebaseAuth.logout();
+        $scope.mainUser.fbInfo = firebaseAuth.user;
+        $scope.loggedIn = false;
     };
 
     $scope.isLoggedIn = function() {
-        return !!$scope.user;
+        return $scope.loggedIn;
     };
-
-    $scope.safeApply = function(fn) {
-        var phase = this.$root.$$phase;
-        if (phase == '$apply' || phase == '$digest') {
-            if(fn && (typeof(fn) === 'function')) {
-                fn();
-            }
-        } else {
-            this.$apply(fn);
-        }
-    };
-
-    $scope.$on('authEvent', function() {
-        $scope.safeApply(function() {
-            $scope.user = firebaseAuth.user;
-            
-        });
-    });
 
   }]);
