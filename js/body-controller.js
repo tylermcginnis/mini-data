@@ -1,5 +1,5 @@
 angular.module('mini-data.controllers')
-  .controller('bodyCtrl', ['$scope', 'firebaseAuth', function($scope, firebaseAuth){
+  .controller('bodyCtrl', ['$scope', 'firebaseAuth', '$firebase', function($scope, firebaseAuth, $firebase){
     $scope.showMain = true;
     $scope.showGoals = false;
     $scope.showNewGoal = false;
@@ -48,6 +48,7 @@ angular.module('mini-data.controllers')
     $scope.$on('authEvent', function() {
         $scope.safeApply(function() {
             $scope.user = firebaseAuth.user;
+            
         });
     });
 

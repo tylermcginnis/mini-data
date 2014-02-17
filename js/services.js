@@ -3,6 +3,7 @@ angular.module('mini-data.services')
 		var auth = {};
 
 		var FBref = new Firebase('https://minidata.firebaseio.com');
+    var FBuser = new Firebase('https://minidata.firebaseio.com/users');
 
 		auth.broadcastAuthEvent = function() {
 		    $rootScope.$broadcast('authEvent');
@@ -12,6 +13,7 @@ angular.module('mini-data.services')
 		    if (error) {
 		    } else if (user) {
 		        auth.user = user;
+            FBuser.push(user);
 		        auth.broadcastAuthEvent();
 		    } else {
 		        auth.user = null;
