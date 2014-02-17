@@ -15,8 +15,24 @@
           <a class="navbar-brand" href="#" ng-click="showNewGoalFn()">New Goal </a>
         </div>
         <ul class="nav navbar-nav pull-right">
-          <li><a href="#"><i class="fa fa-gear fa-2x"></i></a></li>
-          <li><a href="#"><i class="fa fa-user fa-2x"></i></a></li>
+          <li>
+            <a class="dropdown-toggle pointer">
+              <i class="fa fa-gear fa-2x"></i>
+            </a>
+            <ul class="dropdown-menu">
+            <li><a>Thing One</a></li>
+            <li><a> Thing Two </a></li>
+            </ul>
+          </li>
+          <li>
+            <a class="dropdown-toggle pointer">
+              <i class="fa fa-user fa-2x"></i>
+            </a>
+            <ul class="dropdown-menu">
+              <li class="pointer" ng-if="isLoggedIn()" ng-click="logout()"><a>Log Out</a></li>
+              <li class="pointer" ng-if="!isLoggedIn()" ng-click="login()"><a>Log In</a></li>
+            </ul>
+          </li>
         </ul>
     </div>
     <div id="container-full" ng-controller="mainCtrl" ng-if="showMain">
@@ -81,6 +97,7 @@
     <script src="bower_components/angular-resource/angular-resource.min.js"></script>
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script src="bower_components/lodash/dist/lodash.min.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js"></script>
     <script src="https://cdn.firebase.com/v0/firebase.js"></script>
     <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
     <script type='text/javascript' src='https://cdn.firebase.com/js/simple-login/1.2.5/firebase-simple-login.js'></script>
