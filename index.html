@@ -50,7 +50,7 @@
       <div class="container-fluid">
         <h1> Goals and Statistics </h1>
           <div id="inner-container">
-            <div id="goal-card" ng-repeat="data in goalData">
+            <div id="goal-card" ng-repeat="data in mainUser.goals">
               <h3> Goal: {{data.text}} {{data.time}} every {{data.every}}</h3>
             </div>
           </div>
@@ -71,9 +71,9 @@
             <select class="form-control" ng-model="goal.time">
               <option value="once">Once</option>
               <option value="twice">Twice</option>
-              <option value="3x">3X</option>
-              <option value="4x">4X</option>
-              <option value="5x">5X</option>
+              <option value="3x">Three Times</option>
+              <option value="4x">Four Times</option>
+              <option value="5x">Five Times</option>
             </select> 
             <span id="every"> every</span>
             <select class="form-control" ng-model="goal.every">

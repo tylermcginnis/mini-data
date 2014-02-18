@@ -10,7 +10,7 @@ angular.module('mini-data.controllers')
       if(!$scope.goal.text) return;
       $scope.goal.text = $scope.goal.text.toLowerCase();
       $scope.mainUser.goals.push($scope.goal);
-      firebaseAuth.fbuser.child($scope.mainUser.fbInfo.id).set($scope.mainUser);
+      firebaseAuth.userRef.child($scope.mainUser.fbInfo.id).set($scope.mainUser);
       $scope.showGoalsFn();
     }
   }]);
