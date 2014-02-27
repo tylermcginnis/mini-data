@@ -4,7 +4,6 @@ angular.module('mini-data.controllers')
     $scope.showGoals = false;
     $scope.showNewGoal = false;
     $scope.mainUser = {};
-    // $scope.mainUser.goals = [];
 
     $scope.showGoalsFn = function(){
       $scope.showMain = false;
