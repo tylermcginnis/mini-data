@@ -7,10 +7,33 @@ angular.module('mini-data.controllers')
     }
     
     $scope.submitGoal = function(){
+      var submitGoalToFb = function(id){
+        firebaseAuth.userRef.child(id + '/' + 'goals')
+          .push($scope.goal, function(error){
+            if(error){
+              console.log(error);
+              alert('An error occured. Please try again.');
+            } else{
+              console.log('Data Saved');
+              $scope.$apply(function(){
+                var data = {};
+                firebaseAuth.userRef.child(id + '/' + 'goals')
+                  .on('value', function(data){
+                    data.info = data.val();
+                });
+                for(var k in data.info){
+                      $scope.mainUser.goals.k = data.val()[k]
+                }
+                $scope.showGoalsFn();
+              });
+            }
+          });
+      };
+
       if(!$scope.goal.text) return;
+
       $scope.goal.text = $scope.goal.text.toLowerCase();
-      $scope.mainUser.goals.push($scope.goal);
-      firebaseAuth.userRef.child($scope.mainUser.fbInfo.id).set($scope.mainUser);
-      $scope.showGoalsFn();
+
+      $scope.checkIfUserExists($scope.mainUser.fbInfo.id, submitGoalToFb);
     }
   }]);

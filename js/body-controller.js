@@ -67,4 +67,21 @@ angular.module('mini-data.controllers')
       });
     });
 
+    $scope.checkIfUserExists = function(id, cb){
+      var userRef = firebaseAuth.userRef;
+      userRef.child(id).once('value', function(snapshot){
+        var exists = (snapshot.val() !== null);
+        $scope.userExistsCallback(id, exists, cb);
+      });
+    };
+
+    $scope.userExistsCallback = function(uId, exists, cb){
+      if(exists){
+        console.log('It is a thing');
+        cb(uId);
+      } else{
+        console.log(uId, 'does not exist');
+      }
+    }
+
   }]);
