@@ -51,6 +51,7 @@
         <h1> Goals and Statistics </h1>
           <div id="inner-container">
             <div id="goal-card" ng-repeat="data in mainUser.goals">
+              <i class="fa fa-times-circle" ng-click="removeGoal($index)"></i>
               <h3> Goal: {{data.text}} {{data.time}} every {{data.every}}</h3>
             </div>
           </div>

@@ -21,7 +21,7 @@ angular.module('mini-data.services')
           auth.logIn = true;
           auth.broadcastAuthEvent('in');
       } else {
-          console.log('Logged Out');
+          console.log('User is not logged in');
           auth.logIn = false;
           auth.broadcastAuthEvent('out');
       }

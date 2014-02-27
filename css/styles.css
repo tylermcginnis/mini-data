@@ -112,6 +112,13 @@ html, body{
   margin-bottom: 30px;
 }
 
+#goal-card > i {
+  float: right;
+  margin-right: 3px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
 .pointer{
   cursor: pointer;
 }
